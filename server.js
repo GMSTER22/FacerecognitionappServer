@@ -46,10 +46,3 @@ app.post("/image", (req, res) => {
 app.listen(3000, ()=> {
     console.log("server is up and running");
 });
-
-/*
-/signin           --->  POST = success/fail
-/register         --->  POST = user
-/profile/:userId  --->  GET = user
-/image            --->  PUT = user
-*/
