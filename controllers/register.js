@@ -1,5 +1,11 @@
+import express from "express";
+
 const handleRegister = (req, res, db, bcrypt, saltRounds) => {
     const { email, password, name } = req.body;
+
+    if (!email || !name || !password ) {
+        return res.status(400).json("incorect form submission");
+    }
 
     bcrypt.genSalt(saltRounds, function(err, salt) {
         bcrypt.hash(password, salt, function(err, hash) {
